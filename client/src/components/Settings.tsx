@@ -6,7 +6,7 @@ import orangeGem from "../assets/images/orange_gem.svg";
 import redGem from "../assets/images/red_gem.svg";
 import triangle from "../assets/images/Play.svg";
 import triangleDown from "../assets/images/PlayDown.svg";
-import { ColorContext } from "../context/color-context";
+import { ColorContext, PieceDesign } from "../context/color-context";
 import { useContext, useEffect, useState } from "react";
 import triangleLight from "../assets/images/PlayLight.svg";
 import { useGame } from "../hooks/game-hook";
@@ -24,7 +24,7 @@ const Settings = () => {
   ];
 
   useEffect(() => {
-    const handleKeyDown = (e: any) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       switch (e.key.toLowerCase()) {
         case "b":
           changeDesign("blue");
@@ -102,7 +102,7 @@ const Settings = () => {
               <div key={item.option} className="color-gem-item">
                 <div>{item.name}</div>
                 <img
-                  onClick={() => changeDesign(item.option as any)}
+                  onClick={() => changeDesign(item.option as PieceDesign)}
                   src={item.img}
                   alt=""
                   className={`${
