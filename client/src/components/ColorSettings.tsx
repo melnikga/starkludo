@@ -1,4 +1,4 @@
-import "../styles/Settings.scss";
+import "../styles/ColorSettings.scss";
 import xmark from "../assets/images/xmark.svg";
 import blueGem from "../assets/images/blue_gem.svg";
 import greenGem from "../assets/images/green_gem.svg";
@@ -11,7 +11,7 @@ import { useContext, useEffect, useState } from "react";
 import triangleLight from "../assets/images/PlayLight.svg";
 import { useGame } from "../hooks/game-hook";
 
-const Settings = () => {
+const СolorSettings = () => {
   const { design, changeDesign } = useContext(ColorContext);
   const [isWindowVisible, setIsWindowVisible] = useState<boolean>(true); 
   const { startGame } = useGame();
@@ -132,4 +132,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default СolorSettings;
