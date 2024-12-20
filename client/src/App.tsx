@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Row, Col } from "react-simple-flex-grid";
 import { GameContext } from "./context/game-context";
 import Ludo from "./components/Ludo";
@@ -7,6 +8,7 @@ import Menu from "./components/Menu";
 import Header from "./components/Header";
 import { Routes, BrowserRouter as Router, Route } from "react-router"
 import ColorSettings from "./components/ColorSettings";
+import Settings from "./components/Settings";
 import Alert from "./components/Alert";
 import Footer from "./components/Footer";
 import { chance } from "./hooks/utils";
@@ -30,6 +32,7 @@ import GameAccount from "./components/ControlWindows/GameAccount";
 import MobileResponsiveWarning from "./components/MobileResponsiveWarning";
 import { StarkludoSchemaType } from "./dojo/gen/models.gen";
 import { SDK } from "@dojoengine/sdk";
+import Settings from "./components/Settings";
 
 const App = ({ sdk }: { sdk: SDK<StarkludoSchemaType> }) => {
   console.log("SDK initialized:", sdk);
@@ -127,6 +130,7 @@ const App = ({ sdk }: { sdk: SDK<StarkludoSchemaType> }) => {
                   <DiceProvider>
                   <Routes>
                   <Route path="/color-settings" element={<ColorSettings/>}/>
+                  <Route path="/settings" element={<Settings />} />
                   <Route path="/" element={ <>
                       <div className="game-behaviour-warning">
                         <FiAlertTriangle size={20} />
@@ -230,6 +234,7 @@ const App = ({ sdk }: { sdk: SDK<StarkludoSchemaType> }) => {
     </Router>
 
     </>
+
   );
 };
 
