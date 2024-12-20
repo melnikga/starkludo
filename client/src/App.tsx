@@ -6,9 +6,7 @@ import Ludo from "./components/Ludo";
 import Dice from "./components/Dice";
 import Menu from "./components/Menu";
 import Header from "./components/Header";
-import { Routes, BrowserRouter as Router, Route } from "react-router"
 import ColorSettings from "./components/ColorSettings";
-import Settings from "./components/Settings";
 import Alert from "./components/Alert";
 import Footer from "./components/Footer";
 import { chance } from "./hooks/utils";
